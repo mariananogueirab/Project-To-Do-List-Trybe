@@ -14,3 +14,8 @@ body {
   color: #943960;
   text-align: center;
 }
+
+#texto-tarefa {
+    display: inline-block;
+    margin-left: 300px;
+}
