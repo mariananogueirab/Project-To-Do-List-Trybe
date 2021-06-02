@@ -26,3 +26,13 @@ const inputTask = document.createElement('input');
 inputTask.type = 'text';
 inputTask.id = 'texto-tarefa';
 divInput.appendChild(inputTask);
+
+// Exercício 4:
+
+const divList = document.createElement('div');
+divList.className = 'divListClass';
+main.appendChild(divList);
+
+const list = document.createElement('ol');
+list.id = 'lista-tarefas';
+divList.appendChild(list);
