@@ -18,14 +18,14 @@ header.appendChild(marker);
 
 // Exercício 3:
 
-const divInput = document.createElement('div');
-divInput.className = 'divInputClass';
-main.appendChild(divInput);
+const divCreateTask = document.createElement('div');
+divCreateTask.className = 'divInputClass';
+main.appendChild(divCreateTask);
 
 const inputTask = document.createElement('input');
 inputTask.type = 'text';
 inputTask.id = 'texto-tarefa';
-divInput.appendChild(inputTask);
+divCreateTask.appendChild(inputTask);
 
 // Exercício 4:
 
@@ -36,3 +36,24 @@ main.appendChild(divList);
 const list = document.createElement('ol');
 list.id = 'lista-tarefas';
 divList.appendChild(list);
+
+// Exercício 5:
+
+const buttonTask = document.createElement('button');
+buttonTask.type = 'button';
+buttonTask.innerText = 'Criar tarefa';
+buttonTask.id = 'criar-tarefa';
+divCreateTask.appendChild(buttonTask);
+
+function createLineTask (task) {
+  const line = document.createElement('li');
+  line.className = 'lineTask';
+  line.innerText = task;
+  list.appendChild(line);
+}
+
+buttonTask.addEventListener('click', () => {
+  const task = inputTask.value;
+  createLineTask(task);
+  inputTask.value = '';
+});

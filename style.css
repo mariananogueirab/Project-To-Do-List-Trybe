@@ -16,6 +16,10 @@ body {
 }
 
 #texto-tarefa {
-    display: inline-block;
-    margin-left: 300px;
+  display: inline-block;
+  margin-left: 300px;
+}
+
+#criar-tarefa {
+  display: inline-block;
 }
