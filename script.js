@@ -45,7 +45,7 @@ buttonTask.innerText = 'Criar tarefa';
 buttonTask.id = 'criar-tarefa';
 divCreateTask.appendChild(buttonTask);
 
-function createLineTask (task) {
+function createLineTask(task) {
   const line = document.createElement('li');
   line.className = 'lineTask';
   line.innerText = task;
@@ -57,3 +57,9 @@ buttonTask.addEventListener('click', () => {
   createLineTask(task);
   inputTask.value = '';
 });
+
+// Exercício 6:
+
+divList.addEventListener('click', (event) => {
+  event.target.style.backgroundColor = 'rgb(128,128,128)';
+})
