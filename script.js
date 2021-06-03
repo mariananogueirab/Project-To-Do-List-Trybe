@@ -58,8 +58,18 @@ buttonTask.addEventListener('click', () => {
   inputTask.value = '';
 });
 
-// Exercício 6:
+// Exercício 7:
 
 divList.addEventListener('click', (event) => {
-  event.target.style.backgroundColor = 'rgb(128,128,128)';
-})
+  event.target.classList.add('selected');
+  console.log(event.target);
+});
+
+// Exercício 8:
+
+
+// Exercício 9:
+
+divList.addEventListener('dblclick', (event) => {
+  event.target.classList.add('completed');
+});
