@@ -71,5 +71,26 @@ divList.addEventListener('click', (event) => {
 // Exercício 9:
 
 divList.addEventListener('dblclick', (event) => {
-  event.target.classList.add('completed');
+  if (event.target.classList === 'completed') {
+      event.target.style.textDecoration = 'none';
+      event.target.classList.remove('completed');
+  } else {
+      event.target.classList.add('completed');
+  }
+});
+
+// Exercício 10:
+
+const divButtonClear = document.createElement('div');
+divButtonClear.className = 'divButtonClearClass';
+main.appendChild(divButtonClear);
+
+const buttonClear = document.createElement('button');
+buttonClear.type = 'button';
+buttonClear.innerText = 'Clear';
+buttonClear.id = 'apaga-tudo';
+divButtonClear.appendChild(buttonClear);
+
+buttonClear.addEventListener('click', () => {
+  list.innerHTML = '';
 });
