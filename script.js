@@ -71,7 +71,7 @@ divList.addEventListener('click', (event) => {
 // Exercício 9:
 
 divList.addEventListener('dblclick', (event) => {
-  if (event.target.classList === 'completed') {
+  if (event.target.classList.contains('completed') === true) {
       event.target.style.textDecoration = 'none';
       event.target.classList.remove('completed');
   } else {
