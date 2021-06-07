@@ -108,3 +108,38 @@ buttonCompleted.addEventListener('click', () => {
     completeds[index].remove();
   }
 });
+
+// Exercício 12:
+
+const saveTasks = document.createElement('button');
+saveTasks.type = 'button';
+saveTasks.innerText = 'Save Tasks';
+saveTasks.id = 'salvar-tarefas';
+divButton.appendChild(saveTasks);
+
+saveTasks.addEventListener('click', () => {
+  const lista = document.getElementById('lista-tarefas');
+  localStorage.setItem('listaOL', lista.innerHTML);
+});
+
+window.onload = function () {
+  let listaSalva = localStorage.getItem('listaOL');
+  if (listaSalva != null) {
+    const lista = document.getElementById('lista-tarefas');
+    lista.innerHTML = listaSalva;
+  }
+};
+
+// Exercício 13:
+
+const moverCima = document.createElement('button');
+moverCima.type = 'button';
+moverCima.innerText = 'Mover Para Cima';
+moverCima.id = 'mover-cima';
+divButton.appendChild(moverCima);
+
+const moverBaixo = document.createElement('button');
+moverBaixo.type = 'button';
+moverBaixo.innerText = 'Clear Completed';
+moverBaixo.id = 'mover-baixo';
+divButton.appendChild(moverBaixo);
