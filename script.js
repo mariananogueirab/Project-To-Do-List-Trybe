@@ -102,9 +102,9 @@ buttonCompleted.innerText = 'Clear Completed';
 buttonCompleted.id = 'remover-finalizados';
 divButton.appendChild(buttonCompleted);
 
-const completedItens = document.querySelector('.completed');
-
-/* buttonCompleted.addEventListener('click' () => {
-  
-
-}) */
+buttonCompleted.addEventListener('click', () => {
+  let completeds = document.getElementsByClassName('completed');
+  for (let index = 0; index < completeds.length; index += 1) {
+    completeds[index].remove();
+  }
+});
