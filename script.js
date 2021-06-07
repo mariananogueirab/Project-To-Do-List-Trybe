@@ -1,6 +1,5 @@
 const header = document.querySelector('.head');
 const main = document.querySelector('.mainSection');
-const footer = document.querySelector('.foot');
 
 // Exercício 1:
 
@@ -100,7 +99,7 @@ buttonCompleted.id = 'remover-finalizados';
 divButton.appendChild(buttonCompleted);
 
 buttonCompleted.addEventListener('click', () => {
-  let completeds = document.getElementsByClassName('completed');
+  const completeds = document.getElementsByClassName('completed');
   while (completeds.length > 0) {
     completeds[0].remove();
   }
@@ -119,8 +118,8 @@ saveTasks.addEventListener('click', () => {
   localStorage.setItem('listaOL', lista.innerHTML);
 });
 
-window.onload = function () {
-  let listaSalva = localStorage.getItem('listaOL');
+window.onload = function restaurandoLista() {
+  const listaSalva = localStorage.getItem('listaOL');
   if (listaSalva != null) {
     const lista = document.getElementById('lista-tarefas');
     lista.innerHTML = listaSalva;
