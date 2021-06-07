@@ -58,7 +58,7 @@ buttonTask.addEventListener('click', () => {
   inputTask.value = '';
 });
 
-// Exercício 7: não ta funcionando
+// Exercício 7 e 8:
 
 divList.addEventListener('click', (event) => {
   const selectedItens = document.querySelector('.selected');
@@ -68,9 +68,6 @@ divList.addEventListener('click', (event) => {
   }
   event.target.classList.add('selected');
 });
-
-// Exercício 8:
-
 
 // Exercício 9:
 
@@ -104,8 +101,8 @@ divButton.appendChild(buttonCompleted);
 
 buttonCompleted.addEventListener('click', () => {
   let completeds = document.getElementsByClassName('completed');
-  for (let index = 0; index < completeds.length; index += 1) {
-    completeds[index].remove();
+  while (completeds.length > 0) {
+    completeds[0].remove();
   }
 });
 
@@ -140,6 +137,6 @@ divButton.appendChild(moverCima);
 
 const moverBaixo = document.createElement('button');
 moverBaixo.type = 'button';
-moverBaixo.innerText = 'Clear Completed';
+moverBaixo.innerText = 'Mover Para Baixo';
 moverBaixo.id = 'mover-baixo';
 divButton.appendChild(moverBaixo);
