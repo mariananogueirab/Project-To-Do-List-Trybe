@@ -58,11 +58,15 @@ buttonTask.addEventListener('click', () => {
   inputTask.value = '';
 });
 
-// Exercício 7:
+// Exercício 7: não ta funcionando
 
 divList.addEventListener('click', (event) => {
+  const selectedItens = document.querySelector('.selected');
+  if (selectedItens != null) {
+    selectedItens.classList.remove('selected');
+    event.target.classList.add('selected');
+  }
   event.target.classList.add('selected');
-  console.log(event.target);
 });
 
 // Exercício 8:
@@ -72,25 +76,40 @@ divList.addEventListener('click', (event) => {
 
 divList.addEventListener('dblclick', (event) => {
   if (event.target.classList.contains('completed') === true) {
-      event.target.style.textDecoration = 'none';
-      event.target.classList.remove('completed');
+    event.target.style.textDecoration = 'none';
+    event.target.classList.remove('completed');
   } else {
-      event.target.classList.add('completed');
+    event.target.classList.add('completed');
   }
 });
 
 // Exercício 10:
 
-const divButtonClear = document.createElement('div');
-divButtonClear.className = 'divButtonClearClass';
-main.appendChild(divButtonClear);
+const divButton = document.createElement('div');
+divButton.className = 'divButtonClearClass';
+main.appendChild(divButton);
 
 const buttonClear = document.createElement('button');
 buttonClear.type = 'button';
-buttonClear.innerText = 'Clear';
+buttonClear.innerText = 'Clear All';
 buttonClear.id = 'apaga-tudo';
-divButtonClear.appendChild(buttonClear);
+divButton.appendChild(buttonClear);
 
 buttonClear.addEventListener('click', () => {
   list.innerHTML = '';
 });
+
+// Exercício 11:
+
+const buttonCompleted = document.createElement('button');
+buttonCompleted.type = 'button';
+buttonCompleted.innerText = 'Clear Completed';
+buttonCompleted.id = 'remover-finalizados';
+divButton.appendChild(buttonCompleted);
+
+const completedItens = document.querySelector('.completed');
+
+/* buttonCompleted.addEventListener('click' () => {
+  
+
+}) */
