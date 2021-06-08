@@ -139,3 +139,17 @@ moverBaixo.type = 'button';
 moverBaixo.innerText = 'Mover Para Baixo';
 moverBaixo.id = 'mover-baixo';
 divButton.appendChild(moverBaixo);
+
+
+// Exercício 14:
+
+const removeSelected = document.createElement('button');
+removeSelected.type = 'button';
+removeSelected.innerText = 'Remover Item Selecionado';
+removeSelected.id = 'remover-selecionado';
+divButton.appendChild(removeSelected);
+
+removeSelected.addEventListener('click', () => {
+  const selecteds = document.getElementsByClassName('selected');
+  selecteds[0].remove();
+});
