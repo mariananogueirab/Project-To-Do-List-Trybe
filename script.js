@@ -142,14 +142,14 @@ divButton.appendChild(moverBaixo);
 
 function moveUp() {
   const selectedIten = document.getElementsByClassName('selected');
-  if (selectedIten[0] !== list.firstElementChild && selectedIten !== null) {
+  if (selectedIten[0] !== list.firstElementChild && selectedIten.length !== 0) {
     list.insertBefore(selectedIten[0], selectedIten[0].previousElementSibling);
   }
 }
 
 function moveDown() {
   const selectedIten = document.querySelectorAll('.selected');
-  if (selectedIten !== null && selectedIten[0] !== list.lastElementChild) {
+  if (selectedIten.length !== 0 && selectedIten[0] !== list.lastElementChild) {
     list.insertBefore(selectedIten[0], selectedIten[0].nextElementSibling.nextElementSibling);
   }
 }
