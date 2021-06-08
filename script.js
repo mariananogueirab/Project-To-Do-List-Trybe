@@ -142,16 +142,16 @@ divButton.appendChild(moverBaixo);
 
 function moveUp() {
   const selectedIten = document.getElementsByClassName('selected');
-  const list = document.querySelector('#lista-tarefas');
-  if (selectedIten[0] !== list.firstElementChild) {
+  if (selectedIten[0] !== list.firstElementChild && selectedIten !== null) {
     list.insertBefore(selectedIten[0], selectedIten[0].previousElementSibling);
   }
 }
 
 function moveDown() {
   const selectedIten = document.querySelectorAll('.selected');
-  const list = document.querySelector('#lista-tarefas');
-  list.insertBefore(selectedIten[0], selectedIten[0].nextElementSibling.nextElementSibling);
+  if (selectedIten !== null && selectedIten[0] !== list.lastElementChild) {
+    list.insertBefore(selectedIten[0], selectedIten[0].nextElementSibling.nextElementSibling);
+  }
 }
 
 moverCima.addEventListener('click', moveUp);
